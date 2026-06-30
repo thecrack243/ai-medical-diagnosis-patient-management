@@ -1,0 +1,4 @@
+Disease,Model,Accuracy,Precision,Recall,F1,ROC-AUC
+Kidney,Logistic Regression,0.825,0.7667,0.7667,0.7667,0.928
+Kidney,Random Forest,0.875,0.7778,0.9333,0.8485,0.9583
+Kidney,MLP,0.825,0.7857,0.7333,0.7586,0.914

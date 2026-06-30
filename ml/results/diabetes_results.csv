@@ -1,0 +1,4 @@
+Disease,Model,Accuracy,Precision,Recall,F1,ROC-AUC
+Diabetes,Logistic Regression,0.7446,0.6719,0.5309,0.5931,0.8361
+Diabetes,Random Forest,0.7359,0.6562,0.5185,0.5793,0.8167
+Diabetes,MLP,0.7403,0.64,0.5926,0.6154,0.8128
