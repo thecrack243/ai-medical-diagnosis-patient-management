@@ -28,11 +28,12 @@ st.markdown("""
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
     
     /* Clean UI Overrides */
-    header { visibility: hidden !important; }
+    header { background-color: transparent !important; }
+    header [data-testid="stHeaderActionElements"] { display: none !important; }
     footer { visibility: hidden !important; }
     div[data-testid="stDecoration"] { display: none !important; }
     
-    html, body, [class*="st-"] { font-family: 'Inter', sans-serif; }
+    html, body, div[data-testid="stAppViewContainer"], div[data-testid="stSidebar"] { font-family: 'Inter', sans-serif; }
     
     .main-header {
         background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 50%, #8b5cf6 100%);
@@ -227,13 +228,10 @@ st.markdown("""
     }
     
     /* Convert radio selections into beautiful button list items */
-    div[data-testid="stSidebar"] div[data-testid="stRadio"] input[type="radio"] { 
-        display: none !important; 
+    [data-testid="stSidebar"] div[role="radiogroup"] label > div:first-child {
+        display: none !important;
     }
-    div[data-testid="stSidebar"] div[data-testid="stRadio"] div[data-checked="true"] { 
-        display: none !important; 
-    }
-    div[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"] > label {
+    [data-testid="stSidebar"] div[role="radiogroup"] label {
         background: rgba(255, 255, 255, 0.02) !important;
         border: 1px solid rgba(255, 255, 255, 0.04) !important;
         border-radius: 12px !important;
@@ -243,18 +241,19 @@ st.markdown("""
         cursor: pointer !important;
         display: flex !important;
         align-items: center !important;
+        width: 100% !important;
     }
-    div[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"] > label:hover {
+    [data-testid="stSidebar"] div[role="radiogroup"] label:hover {
         background: rgba(14, 165, 233, 0.08) !important;
         border-color: rgba(14, 165, 233, 0.25) !important;
         transform: translateX(4px);
     }
-    div[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"] > label:has(input:checked) {
+    [data-testid="stSidebar"] div[role="radiogroup"] label:has(input:checked) {
         background: linear-gradient(135deg, rgba(14, 165, 233, 0.15), rgba(99, 102, 241, 0.15)) !important;
         border-color: #0ea5e9 !important;
         box-shadow: 0 0 15px rgba(14, 165, 233, 0.2) !important;
     }
-    div[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"] > label:has(input:checked) p {
+    [data-testid="stSidebar"] div[role="radiogroup"] label:has(input:checked) p {
         color: #0ea5e9 !important;
         font-weight: 700 !important;
     }
