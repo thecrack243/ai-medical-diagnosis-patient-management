@@ -296,46 +296,46 @@ def predict_kidney(data):
 
 def get_heart_feature_info():
     return {
-        'age': {'label': 'Age', 'type': 'number', 'min': 1, 'max': 120, 'step': 1},
-        'sex': {'label': 'Sex (1=Male, 0=Female)', 'type': 'select', 'options': [0, 1]},
-        'cp': {'label': 'Chest Pain Type (1-4)', 'type': 'select', 'options': [1, 2, 3, 4]},
-        'trestbps': {'label': 'Resting Blood Pressure (mm Hg)', 'type': 'number', 'min': 50, 'max': 250, 'step': 1},
-        'chol': {'label': 'Serum Cholesterol (mg/dl)', 'type': 'number', 'min': 50, 'max': 600, 'step': 1},
-        'fbs': {'label': 'Fasting Blood Sugar > 120 mg/dl (1=Yes, 0=No)', 'type': 'select', 'options': [0, 1]},
-        'restecg': {'label': 'Resting ECG (0-2)', 'type': 'select', 'options': [0, 1, 2]},
-        'thalach': {'label': 'Max Heart Rate Achieved', 'type': 'number', 'min': 50, 'max': 250, 'step': 1},
-        'exang': {'label': 'Exercise Induced Angina (1=Yes, 0=No)', 'type': 'select', 'options': [0, 1]},
-        'oldpeak': {'label': 'ST Depression (oldpeak)', 'type': 'number', 'min': 0, 'max': 10, 'step': 0.1},
-        'slope': {'label': 'Slope of Peak Exercise ST (1-3)', 'type': 'select', 'options': [1, 2, 3]},
-        'ca': {'label': 'Number of Major Vessels (0-3)', 'type': 'select', 'options': [0, 1, 2, 3]},
-        'thal': {'label': 'Thalassemia (3=Normal, 6=Fixed, 7=Reversible)', 'type': 'select', 'options': [3, 6, 7]},
+        'age': {'label': 'Age', 'type': 'number', 'min': 1, 'max': 120, 'step': 1, 'default': 45},
+        'sex': {'label': 'Sex', 'type': 'select', 'options': [0, 1], 'labels': {0: 'Female', 1: 'Male'}, 'default': 1},
+        'cp': {'label': 'Chest Pain Type', 'type': 'select', 'options': [1, 2, 3, 4], 'labels': {1: 'Typical Angina', 2: 'Atypical Angina', 3: 'Non-anginal Pain', 4: 'Asymptomatic'}, 'default': 1},
+        'trestbps': {'label': 'Resting Blood Pressure (mm Hg)', 'type': 'number', 'min': 50, 'max': 250, 'step': 1, 'default': 120},
+        'chol': {'label': 'Serum Cholesterol (mg/dl)', 'type': 'number', 'min': 50, 'max': 600, 'step': 1, 'default': 200},
+        'fbs': {'label': 'Fasting Blood Sugar > 120 mg/dl', 'type': 'select', 'options': [0, 1], 'labels': {0: 'No', 1: 'Yes'}, 'default': 0},
+        'restecg': {'label': 'Resting ECG', 'type': 'select', 'options': [0, 1, 2], 'labels': {0: 'Normal', 1: 'ST-T Wave Abnormality', 2: 'Left Ventricular Hypertrophy'}, 'default': 0},
+        'thalach': {'label': 'Max Heart Rate Achieved', 'type': 'number', 'min': 50, 'max': 250, 'step': 1, 'default': 150},
+        'exang': {'label': 'Exercise Induced Angina', 'type': 'select', 'options': [0, 1], 'labels': {0: 'No', 1: 'Yes'}, 'default': 0},
+        'oldpeak': {'label': 'ST Depression (oldpeak)', 'type': 'number', 'min': 0, 'max': 10, 'step': 0.1, 'default': 0.0},
+        'slope': {'label': 'Slope of Peak Exercise ST', 'type': 'select', 'options': [1, 2, 3], 'labels': {1: 'Upsloping', 2: 'Flat', 3: 'Downsloping'}, 'default': 1},
+        'ca': {'label': 'Number of Major Vessels', 'type': 'select', 'options': [0, 1, 2, 3], 'labels': {0: '0', 1: '1', 2: '2', 3: '3'}, 'default': 0},
+        'thal': {'label': 'Thalassemia', 'type': 'select', 'options': [3, 6, 7], 'labels': {3: 'Normal', 6: 'Fixed Defect', 7: 'Reversible Defect'}, 'default': 3},
     }
 
 def get_diabetes_feature_info():
     return {
-        'Pregnancies': {'label': 'Number of Pregnancies', 'type': 'number', 'min': 0, 'max': 20, 'step': 1},
-        'Glucose': {'label': 'Glucose Level (mg/dl)', 'type': 'number', 'min': 0, 'max': 300, 'step': 1},
-        'BloodPressure': {'label': 'Blood Pressure (mm Hg)', 'type': 'number', 'min': 0, 'max': 200, 'step': 1},
-        'SkinThickness': {'label': 'Skin Thickness (mm)', 'type': 'number', 'min': 0, 'max': 100, 'step': 1},
-        'Insulin': {'label': 'Insulin Level (mu U/ml)', 'type': 'number', 'min': 0, 'max': 900, 'step': 1},
-        'BMI': {'label': 'BMI', 'type': 'number', 'min': 0, 'max': 70, 'step': 0.1},
-        'DiabetesPedigreeFunction': {'label': 'Diabetes Pedigree Function', 'type': 'number', 'min': 0, 'max': 3, 'step': 0.01},
-        'Age': {'label': 'Age', 'type': 'number', 'min': 1, 'max': 120, 'step': 1},
+        'Pregnancies': {'label': 'Number of Pregnancies', 'type': 'number', 'min': 0, 'max': 20, 'step': 1, 'default': 1},
+        'Glucose': {'label': 'Glucose Level (mg/dl)', 'type': 'number', 'min': 0, 'max': 300, 'step': 1, 'default': 100},
+        'BloodPressure': {'label': 'Blood Pressure (mm Hg)', 'type': 'number', 'min': 0, 'max': 200, 'step': 1, 'default': 70},
+        'SkinThickness': {'label': 'Skin Thickness (mm)', 'type': 'number', 'min': 0, 'max': 100, 'step': 1, 'default': 20},
+        'Insulin': {'label': 'Insulin Level (mu U/ml)', 'type': 'number', 'min': 0, 'max': 900, 'step': 1, 'default': 79},
+        'BMI': {'label': 'BMI', 'type': 'number', 'min': 0, 'max': 70, 'step': 0.1, 'default': 24.0},
+        'DiabetesPedigreeFunction': {'label': 'Diabetes Pedigree Function', 'type': 'number', 'min': 0, 'max': 3, 'step': 0.01, 'default': 0.35},
+        'Age': {'label': 'Age', 'type': 'number', 'min': 1, 'max': 120, 'step': 1, 'default': 35},
     }
 
 def get_kidney_feature_info():
     return {
-        'age': {'label': 'Age', 'type': 'number', 'min': 1, 'max': 120, 'step': 1},
-        'bp': {'label': 'Blood Pressure', 'type': 'number', 'min': 0, 'max': 200, 'step': 1},
-        'sg': {'label': 'Specific Gravity', 'type': 'number', 'min': 1.0, 'max': 1.03, 'step': 0.005},
-        'al': {'label': 'Albumin', 'type': 'select', 'options': [0, 1, 2, 3, 4, 5]},
-        'su': {'label': 'Sugar', 'type': 'select', 'options': [0, 1, 2, 3, 4, 5]},
-        'bgr': {'label': 'Blood Glucose Random', 'type': 'number', 'min': 0, 'max': 500, 'step': 1},
-        'bu': {'label': 'Blood Urea', 'type': 'number', 'min': 0, 'max': 400, 'step': 1},
-        'sc': {'label': 'Serum Creatinine', 'type': 'number', 'min': 0, 'max': 80, 'step': 0.1},
-        'sod': {'label': 'Sodium', 'type': 'number', 'min': 0, 'max': 200, 'step': 1},
-        'pot': {'label': 'Potassium', 'type': 'number', 'min': 0, 'max': 50, 'step': 0.1},
-        'hemo': {'label': 'Hemoglobin', 'type': 'number', 'min': 0, 'max': 20, 'step': 0.1},
+        'age': {'label': 'Age', 'type': 'number', 'min': 1, 'max': 120, 'step': 1, 'default': 50},
+        'bp': {'label': 'Blood Pressure', 'type': 'number', 'min': 0, 'max': 200, 'step': 1, 'default': 80},
+        'sg': {'label': 'Specific Gravity', 'type': 'number', 'min': 1.0, 'max': 1.03, 'step': 0.005, 'default': 1.015},
+        'al': {'label': 'Albumin', 'type': 'select', 'options': [0, 1, 2, 3, 4, 5], 'labels': {0: '0 (Normal)', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5'}, 'default': 0},
+        'su': {'label': 'Sugar', 'type': 'select', 'options': [0, 1, 2, 3, 4, 5], 'labels': {0: '0 (Normal)', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5'}, 'default': 0},
+        'bgr': {'label': 'Blood Glucose Random', 'type': 'number', 'min': 0, 'max': 500, 'step': 1, 'default': 120},
+        'bu': {'label': 'Blood Urea', 'type': 'number', 'min': 0, 'max': 400, 'step': 1, 'default': 35},
+        'sc': {'label': 'Serum Creatinine', 'type': 'number', 'min': 0, 'max': 80, 'step': 0.1, 'default': 1.0},
+        'sod': {'label': 'Sodium', 'type': 'number', 'min': 0, 'max': 200, 'step': 1, 'default': 138},
+        'pot': {'label': 'Potassium', 'type': 'number', 'min': 0, 'max': 50, 'step': 0.1, 'default': 4.2},
+        'hemo': {'label': 'Hemoglobin', 'type': 'number', 'min': 0, 'max': 20, 'step': 0.1, 'default': 14.5},
     }
 
 
