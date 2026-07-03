@@ -1,5 +1,5 @@
 
-# 🏥 AI Medical Diagnosis & Patient Management System
+# 🩺 AI Medical Diagnosis & Patient Management System
 
 A Python final project combining machine learning disease prediction with a patient management web application. Built with Streamlit, scikit-learn, PyTorch, and SQLite.
 
